@@ -8,9 +8,8 @@ func ConvertToHeaderUpdates(header dpfm_api_input_reader.Header) *HeaderUpdates 
 	data := header
 
 	return &HeaderUpdates{
+		Quoation:						*data.Quoation,
 		QuoationType:                   *data.QuoationType,
-		Buyer:                          *data.Buyer,
-		Seller:                         *data.Seller,
 		BillToParty:                    data.BillToParty,
 		BillFromParty:                  data.BillFromParty,
 		Payer:                          data.Payer,
@@ -37,6 +36,7 @@ func ConvertToHeaderUpdates(header dpfm_api_input_reader.Header) *HeaderUpdates 
 		InvoiceDocumentDate:            *data.InvoiceDocumentDate,
 		HeaderText:                     data.HeaderText,
 		HeaderBlockStatus:              data.HeaderBlockStatus,
+		ExternalReferenceDocument:		data.ExternalReferenceDocument,
 	}
 }
 
@@ -44,6 +44,7 @@ func ConvertToAddressUpdates(address dpfm_api_input_reader.Address) *AddressUpda
 	data := address
 
 	return &AddressUpdates{
+		Quoation:    data.Quoation,
 		AddressID:   data.AddressID,
 		PostalCode:  data.PostalCode,
 		LocalRegion: data.LocalRegion,
@@ -61,6 +62,8 @@ func ConvertToItemUpdates(item dpfm_api_input_reader.Item) *ItemUpdates {
 	data := item
 
 	return &ItemUpdates{
+		Quoation:    							 *data.Quoation,
+		QuoationItem:  							 *data.QuoationItem,
 		QuotationItemCategory:                   *data.QuotationItemCategory,
 		SupplyChainRelationshipID:               *data.SupplyChainRelationshipID,
 		QuotationItemText:                       *data.QuotationItemText,
@@ -90,6 +93,8 @@ func ConvertToItemUpdates(item dpfm_api_input_reader.Item) *ItemUpdates {
 		PaymentMethod:                           *data.PaymentMethod,
 		Project:                                 data.Project,
 		ItemBlockStatus:                         data.ItemBlockStatus,
+		ExternalReferenceDocument:				 data.ExternalReferenceDocument,
+		ExternalReferenceDocumentItem:			 data.ExternalReferenceDocumentItem,
 	}
 }
 
@@ -97,12 +102,14 @@ func ConvertToItemPricingElementUpdates(itemPricingElement dpfm_api_input_reader
 	data := itemPricingElement
 
 	return &ItemPricingElementUpdates{
-		ConditionRecord:            data.ConditionRecord,
-		ConditionSequentialNumber:  data.ConditionSequentialNumber,
-		ConditionRateValue:         data.ConditionRateValue,
-		TaxCode:                    data.TaxCode,
-		ConditionAmount:            data.ConditionAmount,
-		ConditionIsManuallyChanged: data.ConditionIsManuallyChanged,
+		Quoation:    				data.Quoation,
+		QuoationItem:  				data.QuoationItem,
+		SupplyChainRelationshipID:	data.SupplyChainRelationshipID,
+		Buyer:                    	data.Buyer,
+		Seller:                   	data.Seller,
+		PricingProcedureCounter:  	data.PricingProcedureCounter,
+		ConditionRateValue:       	data.ConditionRateValue,
+		ConditionAmount:          	data.ConditionAmount,
 	}
 }
 
@@ -110,6 +117,9 @@ func ConvertToPartnerUpdates(partner dpfm_api_input_reader.Partner) *PartnerUpda
 	data := partner
 
 	return &PartnerUpdates{
+		Quoation:    			 data.Quoation,
+		PartnerFunction:         data.PartnerFunction,
+		BusinessPartner:         data.BusinessPartner,
 		BusinessPartnerFullName: data.BusinessPartnerFullName,
 		BusinessPartnerName:     data.BusinessPartnerName,
 		Organization:            data.Organization,

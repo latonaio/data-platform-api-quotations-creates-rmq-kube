@@ -1,9 +1,8 @@
 package dpfm_api_processing_formatter
 
 type HeaderUpdates struct {
+	Quotation					   int		`json:"Quotation"`
 	QuoationType                   string   `json:"QuoationType"`
-	Buyer                          int      `json:"Buyer"`
-	Seller                         int      `json:"Seller"`
 	BillToParty                    *int     `json:"BillToParty"`
 	BillFromParty                  *int     `json:"BillFromParty"`
 	Payer                          *int     `json:"Payer"`
@@ -31,9 +30,13 @@ type HeaderUpdates struct {
 	InvoiceDocumentDate            string   `json:"InvoiceDocumentDate"`
 	HeaderText                     *string  `json:"HeaderText"`
 	HeaderBlockStatus              *bool    `json:"HeaderBlockStatus"`
+	ExternalReferenceDocument      *string 	`json:"ExternalReferenceDocument"`
 }
 
 type PartnerUpdates struct {
+	Quotation				int		`json:"Quotation"`
+	PartnerFunction         string  `json:"PartnerFunction"`
+	BusinessPartner         int     `json:"BusinessPartner"`
 	BusinessPartnerFullName *string `json:"BusinessPartnerFullName"`
 	BusinessPartnerName     *string `json:"BusinessPartnerName"`
 	Organization            *string `json:"Organization"`
@@ -44,6 +47,7 @@ type PartnerUpdates struct {
 }
 
 type AddressUpdates struct {
+	Quotation	int		`json:"Quotation"`
 	AddressID   int     `json:"AddressID"`
 	PostalCode  *string `json:"PostalCode"`
 	LocalRegion *string `json:"LocalRegion"`
@@ -57,6 +61,8 @@ type AddressUpdates struct {
 }
 
 type ItemUpdates struct {
+	Quotation					   			int	     `json:"Quotation"`
+	QuotationItem				   			int	     `json:"QuotationItem"`
 	QuotationItemCategory                   string   `json:"QuotationItemCategory"`
 	SupplyChainRelationshipID               int      `json:"SupplyChainRelationshipID"`
 	QuotationItemText                       string   `json:"QuotationItemText"`
@@ -87,13 +93,17 @@ type ItemUpdates struct {
 	PaymentMethod                           string   `json:"PaymentMethod"`
 	Project                                 *string  `json:"Project"`
 	ItemBlockStatus                         *bool    `json:"ItemBlockStatus"`
+	ExternalReferenceDocument               *string  `json:"ExternalReferenceDocument"`
+	ExternalReferenceDocumentItem           *string  `json:"ExternalReferenceDocumentItem"`
 }
 
 type ItemPricingElementUpdates struct {
-	ConditionRecord            *int     `json:"ConditionRecord"`
-	ConditionSequentialNumber  *int     `json:"ConditionSequentialNumber"`
-	ConditionRateValue         *float32 `json:"ConditionRateValue"`
-	TaxCode                    *string  `json:"TaxCode"`
-	ConditionAmount            *float32 `json:"ConditionAmount"`
-	ConditionIsManuallyChanged *bool    `json:"ConditionIsManuallyChanged"`
+	Quotation				  int	   `json:"Quotation"`
+	QuotationItem			  int	   `json:"QuotationItem"`
+	SupplyChainRelationshipID int      `json:"SupplyChainRelationshipID"`
+	Buyer                     int      `json:"Buyer"`
+	Seller                    int      `json:"Seller"`
+	PricingProcedureCounter   int      `json:"PricingProcedureCounter"`
+	ConditionRateValue        *float32 `json:"ConditionRateValue"`
+	ConditionAmount           *float32 `json:"ConditionAmount"`
 }
