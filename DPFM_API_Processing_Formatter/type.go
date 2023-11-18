@@ -1,8 +1,8 @@
 package dpfm_api_processing_formatter
 
 type HeaderUpdates struct {
-	Quotation					   int		`json:"Quotation"`
-	QuoationType                   string   `json:"QuoationType"`
+	Quotation                      int      `json:"Quotation"`
+	QuotationType                  string   `json:"QuotationType"`
 	BillToParty                    *int     `json:"BillToParty"`
 	BillFromParty                  *int     `json:"BillFromParty"`
 	Payer                          *int     `json:"Payer"`
@@ -30,11 +30,11 @@ type HeaderUpdates struct {
 	InvoiceDocumentDate            string   `json:"InvoiceDocumentDate"`
 	HeaderText                     *string  `json:"HeaderText"`
 	HeaderBlockStatus              *bool    `json:"HeaderBlockStatus"`
-	ExternalReferenceDocument      *string 	`json:"ExternalReferenceDocument"`
+	ExternalReferenceDocument      *string  `json:"ExternalReferenceDocument"`
 }
 
 type PartnerUpdates struct {
-	Quotation				int		`json:"Quotation"`
+	Quotation               int     `json:"Quotation"`
 	PartnerFunction         string  `json:"PartnerFunction"`
 	BusinessPartner         int     `json:"BusinessPartner"`
 	BusinessPartnerFullName *string `json:"BusinessPartnerFullName"`
@@ -47,7 +47,7 @@ type PartnerUpdates struct {
 }
 
 type AddressUpdates struct {
-	Quotation	int		`json:"Quotation"`
+	Quotation   int     `json:"Quotation"`
 	AddressID   int     `json:"AddressID"`
 	PostalCode  *string `json:"PostalCode"`
 	LocalRegion *string `json:"LocalRegion"`
@@ -61,8 +61,8 @@ type AddressUpdates struct {
 }
 
 type ItemUpdates struct {
-	Quotation					   			int	     `json:"Quotation"`
-	QuotationItem				   			int	     `json:"QuotationItem"`
+	Quotation                               int      `json:"Quotation"`
+	QuotationItem                           int      `json:"QuotationItem"`
 	QuotationItemCategory                   string   `json:"QuotationItemCategory"`
 	SupplyChainRelationshipID               int      `json:"SupplyChainRelationshipID"`
 	QuotationItemText                       string   `json:"QuotationItemText"`
@@ -98,8 +98,8 @@ type ItemUpdates struct {
 }
 
 type ItemPricingElementUpdates struct {
-	Quotation				  int	   `json:"Quotation"`
-	QuotationItem			  int	   `json:"QuotationItem"`
+	Quotation                 int      `json:"Quotation"`
+	QuotationItem             int      `json:"QuotationItem"`
 	SupplyChainRelationshipID int      `json:"SupplyChainRelationshipID"`
 	Buyer                     int      `json:"Buyer"`
 	Seller                    int      `json:"Seller"`

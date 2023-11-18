@@ -11,8 +11,8 @@ func ConvertToHeaderCreates(SDC *dpfm_api_input_reader.SDC) *Header {
 	header := &Header{
 		Quotation:                        data.Quotation,
 		QuotationDate:                    *data.QuotationDate,
-		QuoationType:                     *data.QuoationType,
-		QuoationStatus:                   *data.QuoationStatus,
+		QuotationType:                    *data.QuotationType,
+		QuotationStatus:                  *data.QuotationStatus,
 		SupplyChainRelationshipID:        *data.SupplyChainRelationshipID,
 		SupplyChainRelationshipBillingID: data.SupplyChainRelationshipBillingID,
 		SupplyChainRelationshipPaymentID: data.SupplyChainRelationshipPaymentID,
@@ -64,7 +64,7 @@ func ConvertToHeaderUpdates(headerUpdates *dpfm_api_processing_formatter.HeaderU
 	data := headerUpdates
 
 	header := &Header{
-		QuoationType:                   data.QuoationType,
+		QuotationType:                  data.QuotationType,
 		Buyer:                          data.Buyer,
 		Seller:                         data.Seller,
 		BillToParty:                    data.BillToParty,
