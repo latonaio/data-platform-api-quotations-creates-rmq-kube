@@ -11,6 +11,7 @@ type Item struct {
 	QuotationItemTextByBuyer				string	`json:"QuotationItemTextByBuyer"`
 	QuotationItemTextBySeller				string	`json:"QuotationItemTextBySeller"`
 	Product									string	`json:"Product"`
+	SizeOrDimensionText                     *string  `json:"SizeOrDimensionText"`
 	ProductStandardID						*string	`json:"ProductStandardID"`
 	ProductGroup							*string	`json:"ProductGroup"`
 	BaseUnit								string	`json:"BaseUnit"`
@@ -40,6 +41,8 @@ type Item struct {
 	ProductAccountAssignmentGroup			string	`json:"ProductAccountAssignmentGroup"`
 	PaymentTerms							string	`json:"PaymentTerms"`
 	PaymentMethod							string	`json:"PaymentMethod"`
+	Contract		                 		*int    `json:"Contract"`
+	ContractItem	                 		*int    `json:"ContractItem"`
 	Project									*int	`json:"Project"`
 	WBSElement								*int	`json:"WBSElement"`
 	AccountingExchangeRate					*float32 `json:"AccountingExchangeRate"`
