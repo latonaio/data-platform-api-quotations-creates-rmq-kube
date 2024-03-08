@@ -38,6 +38,8 @@ type Header struct {
 	PaymentMethod						string		`json:"PaymentMethod"`
 	Contract		                 	*int     	`json:"Contract"`
 	ContractItem	                 	*int     	`json:"ContractItem"`
+	Project                          	*int     	`json:"Project"`
+	WBSElement                       	*int     	`json:"WBSElement"`
 	ReferenceDocument					*int		`json:"ReferenceDocument"`
 	AccountAssignmentGroup				string		`json:"AccountAssignmentGroup"`
 	AccountingExchangeRate				*float32	`json:"AccountingExchangeRate"`

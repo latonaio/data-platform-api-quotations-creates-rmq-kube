@@ -26,7 +26,8 @@ type HeaderUpdates struct {
 	Incoterms                      *string  `json:"Incoterms"`
 	PaymentTerms                   string   `json:"PaymentTerms"`
 	PaymentMethod                  string   `json:"PaymentMethod"`
-	AccountingExchangeRate         *float32 `json:"AccountingExchangeRate"`
+	Project                        *int    	`json:"Project"`
+	WBSElement                     *int   	`json:"WBSElement"`
 	InvoiceDocumentDate            string   `json:"InvoiceDocumentDate"`
 	HeaderText                     *string  `json:"HeaderText"`
 	HeaderBlockStatus              *bool    `json:"HeaderBlockStatus"`
@@ -83,6 +84,10 @@ type ItemUpdates struct {
 	InternalCapacityQuantityUnit            *string  `json:"InternalCapacityQuantityUnit"`
 	TaxAmount                               *float32 `json:"TaxAmount"`
 	GrossAmount                             *float32 `json:"GrossAmount"`
+	InspectionPlantBusinessPartner          *int    `json:"InspectionPlantBusinessPartner"`
+	InspectionPlant                         *string `json:"InspectionPlant"`
+	InspectionPlan                          *int    `json:"InspectionPlan"`
+	InspectionLot                           *int    `json:"InspectionLot"`
 	Incoterms                               *string  `json:"Incoterms"`
 	TransactionTaxClassification            string   `json:"TransactionTaxClassification"`
 	ProductTaxClassificationBillToCountry   string   `json:"ProductTaxClassificationBillToCountry"`

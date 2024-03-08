@@ -107,6 +107,8 @@ type Header struct {
 	PaymentMethod						*string		`json:"PaymentMethod"`
 	Contract		                 	*int 	    `json:"Contract"`
 	ContractItem	                 	*int     	`json:"ContractItem"`
+	Project                          	*int     	`json:"Project"`
+	WBSElement                       	*int     	`json:"WBSElement"`
 	ReferenceDocument					*int		`json:"ReferenceDocument"`
 	AccountAssignmentGroup				*string		`json:"AccountAssignmentGroup"`
 	AccountingExchangeRate				*float32	`json:"AccountingExchangeRate"`
@@ -141,11 +143,13 @@ type Item struct {
 	SizeOrDimensionText                     *string				 `json:"SizeOrDimensionText"`
 	ProductStandardID                       *string              `json:"ProductStandardID"`
 	ProductGroup                            *string              `json:"ProductGroup"`
+	ProductSpecification                    *string 			 `json:"ProductSpecification"`
+	MarkingOfMaterial                       *string 			 `json:"MarkingOfMaterial"`
 	BaseUnit                                *string              `json:"BaseUnit"`
 	PricingDate                             *string              `json:"PricingDate"`
 	PriceDetnExchangeRate                   *float32             `json:"PriceDetnExchangeRate"`
 	RequestedDeliveryDate                   *string              `json:"RequestedDeliveryDate"`
-	DeliveryUnit                            *float32             `json:"DeliveryUnit"`
+	DeliveryUnit                            *string              `json:"DeliveryUnit"`
 	ServicesRenderingDate                   *string              `json:"ServicesRenderingDate"`
 	QuotationQuantityInBaseUnit             *string              `json:"QuotationQuantityInBaseUnit"`
 	QuotationQuantityInDeliveryUnit         *string              `json:"QuotationQuantityInDeliveryUnit"`
@@ -159,6 +163,10 @@ type Item struct {
 	NetAmount                               *float32             `json:"NetAmount"`
 	TaxAmount                               *float32             `json:"TaxAmount"`
 	GrossAmount                             *float32             `json:"GrossAmount"`
+	InspectionPlantBusinessPartner          *int    			 `json:"InspectionPlantBusinessPartner"`
+	InspectionPlant                         *string 			 `json:"InspectionPlant"`
+	InspectionPlan                          *int    			 `json:"InspectionPlan"`
+	InspectionLot                           *int    			 `json:"InspectionLot"`
 	Incoterms                               *string              `json:"Incoterms"`
 	TransactionTaxClassification            *string              `json:"TransactionTaxClassification"`
 	ProductTaxClassificationBillToCountry   *string              `json:"ProductTaxClassificationBillToCountry"`
@@ -201,7 +209,7 @@ type ItemPricingElement struct {
 	ConditionType              *string  `json:"ConditionType"`
 	PricingDate                *string  `json:"PricingDate"`
 	ConditionRateValue         *float32 `json:"ConditionRateValue"`
-	ConditionRateValueUnit     *string  `json:"ConditionRateValueUnit"`
+	ConditionRateValueUnit     *int		`json:"ConditionRateValueUnit"`
 	ConditionScaleQuantity     *int     `json:"ConditionScaleQuantity"`
 	ConditionCurrency          *string  `json:"ConditionCurrency"`
 	ConditionQuantity          *float32 `json:"ConditionQuantity"`

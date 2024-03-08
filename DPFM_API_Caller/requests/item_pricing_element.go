@@ -12,7 +12,7 @@ type ItemPricingElement struct {
 	ConditionType				string	`json:"ConditionType"`
 	PricingDate					string	`json:"PricingDate"`
 	ConditionRateValue			float32	`json:"ConditionRateValue"`
-	ConditionRateValueUnit		string	`json:"ConditionRateValueUnit"`
+	ConditionRateValueUnit		int		`json:"ConditionRateValueUnit"`
 	ConditionScaleQuantity		int		`json:"ConditionScaleQuantity"`
 	ConditionCurrency			string	`json:"ConditionCurrency"`
 	ConditionQuantity			float32	`json:"ConditionQuantity"`

@@ -14,14 +14,16 @@ type Item struct {
 	SizeOrDimensionText                     *string  `json:"SizeOrDimensionText"`
 	ProductStandardID						*string	`json:"ProductStandardID"`
 	ProductGroup							*string	`json:"ProductGroup"`
+	ProductSpecification                    *string `json:"ProductSpecification"`
+	MarkingOfMaterial                       *string `json:"MarkingOfMaterial"`
 	BaseUnit								string	`json:"BaseUnit"`
 	PricingDate								string	`json:"PricingDate"`
 	PriceDetnExchangeRate					*float32 `json:"PriceDetnExchangeRate"`
 	RequestedDeliveryDate					string	`json:"RequestedDeliveryDate"`
-	DeliveryUnit							float32	`json:"DeliveryUnit"`
+	DeliveryUnit							string	`json:"DeliveryUnit"`
 	ServicesRenderingDate					*string	`json:"ServicesRenderingDate"`
-	QuotationQuantityInBaseUnit				string	`json:"QuotationQuantityInBaseUnit"`
-	QuotationQuantityInDeliveryUnit			string	`json:"QuotationQuantityInDeliveryUnit"`
+	QuotationQuantityInBaseUnit				float32	`json:"QuotationQuantityInBaseUnit"`
+	QuotationQuantityInDeliveryUnit			float32	`json:"QuotationQuantityInDeliveryUnit"`
 	ItemWeightUnit							*string	`json:"ItemWeightUnit"`
 	ProductGrossWeight						*float32 `json:"ProductGrossWeight"`
 	ItemGrossWeight							*float32 `json:"ItemGrossWeight"`
@@ -32,6 +34,10 @@ type Item struct {
 	NetAmount								float32 `json:"NetAmount"`
 	TaxAmount								float32 `json:"TaxAmount"`
 	GrossAmount								float32 `json:"GrossAmount"`
+	InspectionPlantBusinessPartner          *int    `json:"InspectionPlantBusinessPartner"`
+	InspectionPlant                         *string `json:"InspectionPlant"`
+	InspectionPlan                          *int    `json:"InspectionPlan"`
+	InspectionLot                           *int    `json:"InspectionLot"`
 	Incoterms								*string	`json:"Incoterms"`
 	TransactionTaxClassification			string	`json:"TransactionTaxClassification"`
 	ProductTaxClassificationBillToCountry	*string	`json:"ProductTaxClassificationBillToCountry"`
